@@ -1,0 +1,15 @@
+INSERT INTO users (id, name, password, quizzes, points, session_active) VALUES (-1, 'Player One', '12345', 0, 0, false);
+INSERT INTO users (id, name, password, quizzes, points, session_active) VALUES (-2, 'Player Two', '12345', 0, 0, false);
+INSERT INTO users (id, name, password, quizzes, points, session_active) VALUES (-3, 'Player Three', '12345',0, 0, false);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (1, 'Guardians of the Galaxy Vol. 2', 7.6, 663452, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (2, 'Doctor Strange in the Multiverse of Madness', 7.0, 338189, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (3, 'The Imitation Game', 8.0, 757305, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (4, 'The Martian', 8.0, 837802, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (5, 'Arrival', 7.9, 678794, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (6, 'The Gray Man', 6.5, 102585, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (7, 'Captain America: Civil War', 7.8, 768198, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (8, 'Transcendence', 6.2, 228400, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (9, 'Now You See Me 2', 6.4, 284364, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (10, 'The Adam Project', 6.7, 185772, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (11, 'Avengers: Infinity War', 8.4, 1040949, null);
+INSERT INTO movies (id, title, rate, votes, points) VALUES (12, 'The Soloist', 6.7, 53606, null);
