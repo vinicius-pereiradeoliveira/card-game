@@ -1,31 +1,30 @@
 # Card Game
 
-API REST para jogar um exemplo de "card game" com escolha de filmes para tentar acertar qual tem melhor nota no IMDB.
+REST API to play an example of a "card game" with choosing films to try to guess which one has the best rating on IMDB.
 
 
+**Step 1:**
 
-**Passo 1:**
+Access the project root folder and run the Java application with Spring Boot via the IDE or via the maven command.
 
-Acessar a pasta raíz do projeto e executar a aplicação Java com Spring Boot via IDE ou via comando maven.
+**Step 2:**
 
-**Passo 2:**
+Use the Postman tool or the OpenApi documentation at http://localhost:8080/swagger-ui/index.html
 
-Usar a ferramenta Postman ou a documentação OpenApi em http://localhost:8080/swagger-ui/index.html
+**Step 3 (play game):**
 
-**Passo 3 (para jogar):**
+1 - Create user at the POST endpoint (/movies/user);
 
-1 - Criar usuário no endpoint POST (/movies/user);
+2 - Log in using the GET endpoint (/movies/login); -- Receives user id.
 
-2 - Fazer login usado o endpoint GET (/movies/login); -- Recebe id do usuário.
+3 - Start a new game using the POST endpoint (/movies/quiz/start/{id}) - The id field is the id of the previously logged in user.
 
-3 - Iniciar um novo jogo usando o endpoint POST (/movies/quiz/start/{id}) - O campo id é o id do usuário logado previamente.
+4 - Start the rounds of 6 moves, **receive the first pair of movies** in the GET endpoint (/movies/quiz/{id}) - The id field is the id of the previously logged in user.
 
-4 - Começa as rodadas de 6 jogadas, **recebe o primeiro par de filmes** no endpoint GET (/movies/quiz/{id}) - O campo id é o id do usuário logado previamente.
+5 - When choosing the film that you think has the best rating, use the POST endpoint (/movies/quiz/answer/{id}) - The id field is the id of the logged in user
+     This endpoint sends a JSON content in the body with the chosen film and the other film for comparison purposes in the backend.
 
-5 - Ao escolher o filme que acha que tem melhor nota, usa o endpoint POST (/movies/quiz/answer/{id}) - O campo id é o id do usuário logado 
-    Neste endpoint envia no body um JSON content com o filme escolhido e o outro filme para fins de comparação no backend.
-
-6 - Se o jogador tentar apenas buscar mais pares de filmes, sem responder o par previamente mostrado, deve receber mensagem de que precisa responder
-    o par anterior. Após esta mensagem, usa-se o endpoint GET (/movies/quiz/recover/{id}) para ajustar as jogadas e trazer o par anterior.
+6 - If the player just tries to search for more pairs of films, without responding to the pair previously shown, they should receive a message that they need to respond
+     the previous pair. After this message, the GET endpoint (/movies/quiz/recover/{id}) is used to adjust the moves and bring the previous pair.
     
-7 - O endpoint para mostrar o ranking após algumas jogadas por mais de um player é o GET (/movies/quiz/ranking).    
+7 - The endpoint to show the ranking after a few plays by more than one player is GET (/movies/quiz/ranking).   
